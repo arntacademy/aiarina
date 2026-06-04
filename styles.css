@@ -12,6 +12,11 @@
 
 html { scroll-behavior: smooth; }
 
+::selection {
+  background: rgba(237,233,227,0.2);
+  color: var(--text);
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -119,11 +124,11 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-sub {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 340px;
+  color: rgba(237,233,227,0.6);
+  line-height: 1.85;
+  max-width: 380px;
 }
 
 .hero-right {
@@ -460,15 +465,23 @@ a { text-decoration: none; color: inherit; }
 .back-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: rgba(237,233,227,0.6);
   margin-bottom: 56px;
-  transition: color 0.3s, gap 0.3s;
+  border: 1px solid rgba(237,233,227,0.15);
+  border-radius: 2px;
+  padding: 10px 18px;
+  transition: color 0.3s, gap 0.3s, border-color 0.3s, background 0.3s;
 }
-.back-link:hover { color: var(--text); gap: 14px; }
+.back-link:hover {
+  color: var(--text);
+  gap: 16px;
+  border-color: rgba(237,233,227,0.35);
+  background: rgba(237,233,227,0.04);
+}
 
 /* ─── ARTICLE CTA ──────────────────────────────────────────── */
 .article-cta {
