@@ -6,121 +6,375 @@
   <title>Claude + Higgsfield — Ткачева Арина</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    mark {
+      background: linear-gradient(104deg,
+        rgba(237,233,227,0) 0%,
+        rgba(237,233,227,0.11) 4%,
+        rgba(237,233,227,0.08) 94%,
+        rgba(237,233,227,0) 100%);
+      color: inherit;
+      padding: 2px 4px;
+      border-radius: 1px;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .prompt-block {
+      background: rgba(237,233,227,0.03);
+      border: 1px solid rgba(237,233,227,0.1);
+      border-radius: 2px;
+      padding: 0;
+      margin: 40px 0;
+      overflow: hidden;
+    }
+    .prompt-block-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(237,233,227,0.08);
+    }
+    .prompt-block-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(237,233,227,0.3);
+      margin: 0;
+    }
+    .prompt-block pre {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 2;
+      color: rgba(237,233,227,0.65);
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0;
+      padding: 24px 20px;
+    }
+    .prompt-copy {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(237,233,227,0.55);
+      background: rgba(237,233,227,0.06);
+      border: 1px solid rgba(237,233,227,0.12);
+      border-radius: 2px;
+      padding: 7px 13px;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      white-space: nowrap;
+    }
+    .prompt-copy:hover {
+      background: rgba(237,233,227,0.1);
+      border-color: rgba(237,233,227,0.25);
+      color: var(--text);
+    }
+    .prompt-copy.copied {
+      background: rgba(212,175,90,0.1);
+      border-color: rgba(212,175,90,0.3);
+      color: rgba(212,175,90,0.85);
+    }
+    .flow-steps {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin: 36px 0;
+      border: 1px solid rgba(237,233,227,0.08);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .flow-step {
+      flex: 1;
+      padding: 18px 16px;
+      text-align: center;
+      background: rgba(237,233,227,0.02);
+      border-right: 1px solid rgba(237,233,227,0.08);
+    }
+    .flow-step:last-child { border-right: none; }
+    .flow-step-num {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      color: rgba(237,233,227,0.25);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .flow-step-text {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text);
+    }
+    @media (max-width: 768px) {
+      .flow-steps { flex-direction: column; }
+      .flow-step { border-right: none; border-bottom: 1px solid rgba(237,233,227,0.08); }
+      .flow-step:last-child { border-bottom: none; }
+    }
+  </style>
 </head>
 <body>
 
   <div class="cursor" id="cursor"></div>
 
-  <!-- NAV -->
   <nav class="nav">
-    <a href="index.html" class="nav-logo">Ткачева Арина || нейросети</a>
+    <a href="index.html" class="nav-logo"><mark class="nav-mark">&copy; Сгенерировано Ариной Ткачёвой</mark></a>
     <a href="https://t.me/arnt_ai" target="_blank" class="btn-tg">Telegram →</a>
   </nav>
 
-  <!-- ARTICLE HERO -->
   <div class="article-hero">
     <a href="index.html#articles" class="back-link">← Все статьи</a>
     <div class="article-meta">
       <span class="article-tag">Контент</span>
-      <span class="article-date">Статья 05</span>
+      <div class="article-meta-sep"></div>
+      <span class="article-num">Статья 05</span>
     </div>
-    <h1 class="article-title">Как создавать контент через связку Claude&nbsp;+ Higgsfield?</h1>
-    <p class="article-subtitle">Пишешь промпт в Claude — получаешь готовый видео-контент в Higgsfield. Связка, которая заменяет половину контент-команды.</p>
+    <h1 class="article-title">Как создавать контент через связку Claude + Higgsfield?</h1>
+    <p class="article-subtitle">Пишешь идею на русском — получаешь готовое видео. А если подключить инструменты напрямую, процесс становится полностью автоматическим.</p>
   </div>
 
   <div class="article-divider"></div>
 
-  <!-- ARTICLE BODY -->
   <div class="article-body">
 
-    <p>Раньше для производства видео-контента нужны были сценарист, режиссёр, оператор и монтажёр. Сегодня эту цепочку можно сократить до двух инструментов и одного человека — тебя.</p>
+    <p>Раньше для производства видео-контента нужны были сценарист, режиссёр, оператор и монтажёр. Сегодня эту цепочку можно сократить до двух инструментов и одного человека — тебя. Но это ещё не всё: Claude и Higgsfield можно соединить напрямую, чтобы весь процесс шёл автоматически.</p>
 
     <h2>Что такое Higgsfield?</h2>
 
-    <p><strong>Higgsfield</strong> — это AI-инструмент для генерации видео. В отличие от стоковых видео, он создаёт уникальные ролики по текстовому описанию: задаёшь сцену, стиль, движение камеры — получаешь видео.</p>
+    <p><strong>Higgsfield</strong> — AI-инструмент для генерации видео. В отличие от стоковых роликов, он создаёт уникальные видео по текстовому описанию: задаёшь сцену, стиль, движение камеры — получаешь кинематографичный результат.</p>
 
-    <p>Но есть проблема: большинство людей не умеют писать промпты для видео. Они слишком расплывчатые, слишком сложные или слишком скучные. Здесь на сцену выходит Claude.</p>
+    <p><strong>Проблема:</strong> большинство людей не умеют писать видео-промпты. Они слишком расплывчатые или слишком технические. Именно здесь Claude незаменим — он переводит твою идею в профессиональное техзадание для Higgsfield.</p>
 
-    <h2>Как работает связка</h2>
+    <h2><mark>Уровень 1. Ручная связка</mark></h2>
 
-    <div class="highlight">
-      <p>Идея → Claude пишет промпт → Higgsfield генерирует видео → готовый контент</p>
+    <p>Самый простой способ — работать через два открытых браузера: Claude.ai и Higgsfield.ai. Цикл выглядит так:</p>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <span class="flow-step-num">01</span>
+        <span class="flow-step-text">Идея на русском</span>
+      </div>
+      <div class="flow-step">
+        <span class="flow-step-num">02</span>
+        <span class="flow-step-text">Claude пишет промпт</span>
+      </div>
+      <div class="flow-step">
+        <span class="flow-step-num">03</span>
+        <span class="flow-step-text">Вставляешь в Higgsfield</span>
+      </div>
+      <div class="flow-step">
+        <span class="flow-step-num">04</span>
+        <span class="flow-step-text">Получаешь видео</span>
+      </div>
     </div>
 
-    <p>Ты приносишь идею на обычном языке. Claude превращает её в точный, кинематографичный промпт для Higgsfield. Higgsfield генерирует видео. Весь цикл — от 5 до 15 минут.</p>
+    <p>Весь цикл — от 5 до 15 минут. Используй этот промпт для старта:</p>
 
-    <h2>Шаг 1. Формулируй идею для Claude</h2>
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Промпт — базовая генерация видео-промпта</span>
+        <button class="prompt-copy" onclick="copyPrompt(this)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre>Напиши промпт для Higgsfield на английском языке.
 
-    <p>Открой Claude и опиши, что ты хочешь снять. Не думай о технических деталях — говори как человек:</p>
+Видео: [опиши своими словами что хочешь показать]
+Настроение: [атмосферное / динамичное / спокойное / тревожное]
+Аудитория: [кто будет смотреть]
+Формат: [9:16 для Reels/Stories или 16:9 для YouTube]
 
-    <div class="highlight">
-      <p>«Мне нужно видео для поста в Instagram о том, что ИИ экономит время. Хочу атмосферное, тёмное, что-то про скорость и фокус. Для бизнес-аудитории.»</p>
+Требования к промпту:
+— Длина 3–5 предложений
+— Укажи движение камеры (slow zoom, pan left, dolly shot и т.д.)
+— Укажи освещение (golden hour, cold blue, dramatic shadows и т.д.)
+— Укажи стиль (cinematic, documentary, editorial и т.д.)
+— Конкретные визуальные детали — не абстрактные описания</pre>
     </div>
 
-    <h2>Шаг 2. Попроси Claude написать промпт для Higgsfield</h2>
+    <p>Если результат не устроил — не начинай с нуля. Опиши Claude что именно не так, и он доработает промпт:</p>
 
-    <p>Используй этот промпт для Claude:</p>
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Промпт — доработка результата</span>
+        <button class="prompt-copy" onclick="copyPrompt(this)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre>Перепиши промпт для Higgsfield. Проблема с текущей версией:
+— [опиши что не так: слишком светло, слишком медленно, нет динамики и т.д.]
 
-    <div class="highlight">
-      <p>«Напиши промпт для Higgsfield на английском языке. Видео должно быть: [твоя идея]. Стиль: кинематографичный, тёмный, премиум. Укажи движение камеры, освещение, настроение и конкретные визуальные элементы. Промпт должен быть детальным — 3-5 предложений.»</p>
+Что нужно изменить:
+— [конкретные правки]
+
+Остальное оставь как есть.</pre>
     </div>
 
-    <p>Claude выдаст тебе готовый промпт на английском — именно в том формате, который Higgsfield понимает лучше всего.</p>
+    <h2><mark>Уровень 2. Прямое подключение через Claude Code</mark></h2>
 
-    <h2>Шаг 3. Запускай в Higgsfield</h2>
+    <p>Это уже следующий уровень — когда ты не копируешь промпты вручную, а подключаешь Higgsfield напрямую к Claude Code. В результате вся цепочка работает в одном окне: ввёл идею → получил видео.</p>
+
+    <p>Что для этого нужно:</p>
 
     <ul>
-      <li>Заходи на <strong>higgsfield.ai</strong></li>
-      <li>Вставляй промпт от Claude</li>
-      <li>Выбирай соотношение сторон (9:16 для Reels/Stories, 16:9 для YouTube)</li>
-      <li>Генерируй — первый результат обычно приходит за 1-2 минуты</li>
+      <li><strong>API-ключ Higgsfield</strong> — получить в настройках аккаунта на higgsfield.ai (раздел API)</li>
+      <li><strong>Claude Code</strong> — расширение VS Code, о котором написано в <a href="article4.html" style="color:inherit;border-bottom:1px solid rgba(237,233,227,0.15);">статье про создание сайта</a></li>
+      <li><strong>5 минут</strong> — Claude Code напишет весь скрипт сам</li>
     </ul>
 
-    <h2>Шаг 4. Итерируй через Claude</h2>
+    <p>Открой Claude Code в VS Code и вставь этот промпт:</p>
 
-    <p>Если видео не то что нужно — не начинай с нуля. Опиши Claude что не так:</p>
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Промпт — скрипт для автоматической связки</span>
+        <button class="prompt-copy" onclick="copyPrompt(this)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre>Создай Python-скрипт для автоматической генерации видео через Higgsfield API.
 
-    <div class="highlight">
-      <p>«Видео получилось слишком светлым и медленным. Перепиши промпт: сделай темнее, добавь динамику, камера должна двигаться слева направо.»</p>
+Логика работы:
+1. Скрипт принимает описание видео на русском языке (через input)
+2. Формирует детальный промпт для Higgsfield на английском — кинематографичный, с указанием освещения, движения камеры, стиля
+3. Отправляет POST-запрос на Higgsfield API
+4. Выводит в консоль статус генерации и ссылку на видео
+
+API Higgsfield:
+— Endpoint: https://api.higgsfield.ai/v1/generation
+— Авторизация: Bearer token в заголовке
+— Параметры: prompt (string), aspect_ratio ("16:9" или "9:16"), duration (4 или 8)
+
+Ключ API храни в переменной окружения HIGGSFIELD_API_KEY.
+Добавь обработку ошибок и понятные сообщения в консоль.
+Код должен быть простым — без лишних зависимостей, только requests и os.</pre>
     </div>
 
-    <p>Так за 3-4 итерации ты приходишь к точному результату — без лишних слов и без потери времени.</p>
+    <div class="highlight">
+      <p>Claude Code создаст файл, сразу запустит его и покажет результат. Если что-то пойдёт не так — он же исправит ошибки автоматически.</p>
+    </div>
 
-    <h2>Реальный пример</h2>
+    <h2><mark>Библиотека промптов под задачи</mark></h2>
 
-    <p>Я тестировала эту связку для поста про тайм-менеджмент. Идея: «человек работает, всё вокруг хаотично, но он сосредоточен».</p>
+    <p>Готовые шаблоны под разные типы контента — вставляй в Claude, подставляй свои детали.</p>
 
-    <p>Claude написал промпт в 4 предложения с указанием боке, холодного синего освещения и плавного зума. Higgsfield выдал видео с первой попытки. Пост набрал в 3 раза больше просмотров, чем обычно.</p>
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Промпт — видео для бизнес-контента</span>
+        <button class="prompt-copy" onclick="copyPrompt(this)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre>Напиши 3 варианта промпта для Higgsfield под бизнес-контент.
+
+Тема: [например, автоматизация бизнеса / продуктивность / технологии]
+Настроение: премиальное, уверенное, современное
+Формат: 9:16 (вертикальные Reels)
+
+Для каждого варианта укажи:
+— Полный промпт на английском (3–4 предложения)
+— Движение камеры
+— Цветовая палитра
+— На какой тип поста подходит (экспертный, вовлекающий, продающий)</pre>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Промпт — видео для личного бренда</span>
+        <button class="prompt-copy" onclick="copyPrompt(this)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre>Я веду личный блог на тему [указать тему].
+Моя аудитория: [описать].
+Визуальный стиль моего контента: [тёплый/холодный/минималистичный/яркий].
+
+Напиши 5 промптов для Higgsfield — b-roll видео, которые можно использовать как фоновые ролики под мои посты и Reels.
+
+Каждый промпт:
+— На английском, 3–4 предложения
+— Без людей в кадре (только атмосфера, предметы, пространства)
+— Соответствует тематике блога
+— Формат 9:16</pre>
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Промпт — видео под конкретный текст поста</span>
+        <button class="prompt-copy" onclick="copyPrompt(this)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre>Вот текст моего поста:
+[вставь текст поста]
+
+Создай промпт для Higgsfield, который визуально отражает смысл этого текста.
+
+Требования:
+— Видео должно усиливать эмоцию поста, не пересказывать его
+— Никакого текста на экране
+— Кинематографичный стиль
+— Формат: [9:16 или 16:9]
+— Длина промпта: 4–5 предложений на английском</pre>
+    </div>
 
     <h2>Для какого контента это работает</h2>
 
     <ul>
-      <li><strong>Instagram Reels и Stories</strong> — атмосферные заставки, b-roll</li>
-      <li><strong>Фоновые видео</strong> для презентаций и сайтов</li>
+      <li><strong>Instagram* Reels и Stories</strong> — атмосферные заставки, b-roll под текст</li>
+      <li><strong>Фоновые видео</strong> для презентаций, сайтов, онлайн-курсов</li>
       <li><strong>Визуальные ассеты</strong> для рекламных кампаний</li>
-      <li><strong>Обложки</strong> для YouTube</li>
+      <li><strong>Превью</strong> для YouTube и подкастов</li>
     </ul>
 
-    <p>Главное — это не замена личному видео с тобой в кадре. Это инструмент для визуального контента, который усиливает твои тексты и идеи.</p>
+    <p>Главное: это не замена личному видео с тобой в кадре. <strong>Это инструмент для визуального слоя</strong> — фона, атмосферы, b-roll — который делает твой контент профессиональным без съёмочной группы.</p>
+
+    <p class="footnote">* Instagram принадлежит компании Meta. Деятельность Meta признана нежелательной и запрещена на территории Российской Федерации.</p>
 
   </div>
 
-  <!-- ARTICLE CTA -->
   <div class="article-cta">
-    <div class="article-cta-box">
-      <p>Хочешь готовые промпты?</p>
-      <h3>В Telegram — шаблоны Claude для Higgsfield, которые уже протестированы</h3>
-      <br />
-      <a href="https://t.me/arnt_ai" target="_blank" class="btn-primary">Перейти в канал →</a>
-    </div>
+    <p>Хочешь готовые промпты?</p>
+    <h3>В Telegram — шаблоны Claude для Higgsfield, которые уже протестированы</h3>
+    <a href="https://t.me/arnt_ai" target="_blank" class="btn-primary">Перейти в канал →</a>
   </div>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <span>Ткачева Арина, 2026</span>
-    <a href="https://t.me/arnt_ai" target="_blank">Telegram</a>
+    <a href="https://t.me/arnt_ai" target="_blank">Telegram →</a>
   </footer>
 
   <script>
@@ -133,6 +387,20 @@
       el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
     });
+
+    function copyPrompt(btn) {
+      const pre = btn.closest('.prompt-block').querySelector('pre');
+      navigator.clipboard.writeText(pre.textContent.trim()).then(() => {
+        btn.querySelector('svg').style.display = 'none';
+        btn.childNodes[btn.childNodes.length - 1].textContent = ' Скопировано ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.querySelector('svg').style.display = '';
+          btn.childNodes[btn.childNodes.length - 1].textContent = ' Скопировать';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
   </script>
 
 </body>
