@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сайт без кода за 2 часа — Ткачева Арина</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: rgba(237,233,227,0.04);
+      border: 1px dashed rgba(237,233,227,0.12);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 40px 0;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(237,233,227,0.2);
+    }
+    .step-label {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(237,233,227,0.3);
+      margin-bottom: 8px;
+    }
+    .site-examples {
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .site-examples img {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      border: 1px solid rgba(237,233,227,0.07);
+    }
+    .site-examples-caption {
+      font-size: 12px !important;
+      letter-spacing: 0.06em;
+      color: rgba(237,233,227,0.3) !important;
+      text-align: center;
+      margin: 8px 0 0 !important;
+      line-height: 1.5 !important;
+    }
+    .prompt-block {
+      background: rgba(237,233,227,0.03);
+      border: 1px solid rgba(237,233,227,0.1);
+      border-radius: 2px;
+      padding: 0;
+      margin: 40px 0;
+      overflow: hidden;
+    }
+    .prompt-block-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(237,233,227,0.08);
+    }
+    .prompt-block-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(237,233,227,0.3);
+      margin: 0;
+    }
+    .prompt-block pre {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 2;
+      color: rgba(237,233,227,0.65);
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0;
+      padding: 24px 20px;
+    }
+    .prompt-copy {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(237,233,227,0.55);
+      background: rgba(237,233,227,0.06);
+      border: 1px solid rgba(237,233,227,0.12);
+      border-radius: 2px;
+      padding: 7px 13px;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      white-space: nowrap;
+    }
+    .prompt-copy:hover {
+      background: rgba(237,233,227,0.1);
+      border-color: rgba(237,233,227,0.25);
+      color: var(--text);
+    }
+    .prompt-copy.copied {
+      background: rgba(212,175,90,0.1);
+      border-color: rgba(212,175,90,0.3);
+      color: rgba(212,175,90,0.85);
+    }
+    mark {
+      background: linear-gradient(104deg,
+        rgba(237,233,227,0) 0%,
+        rgba(237,233,227,0.11) 4%,
+        rgba(237,233,227,0.08) 94%,
+        rgba(237,233,227,0) 100%);
+      color: inherit;
+      padding: 2px 4px;
+      border-radius: 1px;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Ткачева Арина || нейросети</a>
+    <a href="https://t.me/arnt_ai" target="_blank" class="btn-tg">Telegram</a>
+  </nav>
+
+  <div class="article-hero">
+    <a href="index.html" class="back-link">← Все статьи</a>
+    <div class="article-meta">
+      <span class="article-tag">Без кода</span>
+      <div class="article-meta-sep"></div>
+      <span class="article-num">Статья 04</span>
+    </div>
+    <h1 class="article-title">Как сделать собственный сайт без строчки кода за 2 часа?</h1>
+    <p class="article-subtitle">Мы привыкли думать, что сайт — это разработчик, дизайнер и бюджет. На деле достаточно одного вечера и подписки на Claude.</p>
+  </div>
+
+  <div class="article-divider"></div>
+
+  <div class="article-body">
+
+    <p>Всё, что написано ниже — чистая практика. Именно так был создан сайт, на котором ты сейчас находишься. Так я создавала сайт для своей академии английского с интерактивным тестом. Сейчас собираю платформу для студентов. И всё это — без единой строчки кода, написанной вручную. Всё сделано с помощью вайбкодинга.</p>
+
+    <h2>Что такое вайбкодинг?</h2>
+
+    <p><strong>Вайбкодинг</strong> (vibe coding) — это подход к созданию сайтов и приложений, при котором ты описываешь что хочешь словами, а ИИ пишет код сам. Ты не программируешь — ты ставишь задачи и направляешь результат.</p>
+
+    <p>Так можно собрать сайт-визитку, портфолио, лид-магнит, лендинг или даже MVP продукта. Стоимость подписки на Claude — около 2000 рублей в месяц. Стоимость разработчика — от 50 000.</p>
+
+    <div class="site-examples">
+      <img src="site-example-1.png" alt="ARNT Academy — главная страница" />
+      <img src="site-example-2.png" alt="ARNT Academy — тест на уровень" />
+      <p class="site-examples-caption">ARNT Academy — академия английского языка</p>
+    </div>
+
+    <h2><mark>Шаг 1. Подключи инструменты</mark></h2>
+
+    <p>Для работы понадобятся два инструмента: <strong>VS Code</strong> и <strong>Claude Code</strong>.</p>
+
+    <ul>
+      <li>Скачай и установи VS Code — это редактор кода, но кодить в нём не придётся</li>
+    </ul>
+    <div class="site-examples" style="margin: 24px 0;">
+      <img src="vscode.png" alt="Интерфейс VS Code" />
+    </div>
+    <ul>
+      <li>Установи расширение Claude: открой раздел Extensions → найди официальное расширение Claude → установи → авторизуйся</li>
+    </ul>
+    <div class="site-examples" style="margin: 24px 0;">
+      <img src="extension.png" alt="Расширение Claude в VS Code" />
+    </div>
+    <ul>
+      <li>Теперь ИИ работает прямо внутри редактора и может создавать, редактировать и исправлять файлы без твоего участия</li>
+    </ul>
+
+    <div class="highlight">
+      <p>О том как зарегистрироваться в Claude и подключить Claude Code — читай в <a href="article2.html" style="color:inherit;border-bottom:1px solid rgba(237,233,227,0.2);">статье про старт работы с Claude</a>.</p>
+    </div>
+
+    <h2><mark>Шаг 2. Создай рабочее пространство</mark></h2>
+
+    <p>Создай на рабочем столе новую папку с понятным названием — например, <strong>my-site</strong>. Открой VS Code → File → Open Folder → выбери созданную папку. Всё, рабочее пространство готово. Сюда Claude будет сохранять файлы сайта.</p>
+    <div class="site-examples" style="margin: 24px 0;">
+      <img src="step3.png" alt="Создание рабочей папки в VS Code" />
+    </div>
+
+    <h2><mark>Шаг 3. Научись ставить задачу</mark></h2>
+
+    <p>Большинство получают слабый результат не потому что ИИ плохо работает — а потому что дают расплывчатые инструкции.</p>
+
+    <div class="highlight">
+      <p>❌ Плохо: «Сделай мне красивый сайт»<br /><br />
+      ✅ Хорошо: «Создай сайт-визитку для психолога. Спокойный минималистичный дизайн в светлых тонах. Блоки: Обо мне, Услуги, Отзывы, Контакты, форма записи. Цель — чтобы посетитель оставил заявку. Адаптирован под телефон и компьютер.»</p>
+    </div>
+
+    <p>Перед тем как писать запрос, ответь себе на четыре вопроса:</p>
+
+    <ul>
+      <li><strong>Что создаёшь?</strong> — визитка, лендинг, портфолио, магазин, блог</li>
+      <li><strong>Для кого?</strong> — клиенты, работодатели, студенты, партнёры</li>
+      <li><strong>Какие блоки нужны?</strong> — перечисли всё: кнопки, формы, разделы, фото</li>
+      <li><strong>Какое впечатление должен производить?</strong> — премиальный, дружелюбный, технологичный, строгий</li>
+    </ul>
+
+    <p>Если сложно сформулировать — попроси Claude помочь:</p>
+
+    <div class="highlight">
+      <p>«Я хочу создать сайт для своей деятельности. Задай мне вопросы, которые помогут составить подробное техническое задание.»</p>
+    </div>
+
+    <p>А вот как выглядит хорошо составленный промпт — возьми за основу и адаптируй под свою нишу:</p>
+
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Пример готового промпта — сайт для психолога</span>
+        <button class="prompt-copy" id="copyBtn" onclick="copyPrompt()">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre id="psycho-prompt">Ты фронтенд-разработчик, который делает лендинги с упором на доверие. Ты помнишь, что посетитель этого сайта может быть в уязвимом состоянии, и каждое твоё решение в дизайне и тексте это учитывает.
+
+Создай сайт-визитку для частного психолога.
+
+Контекст:
+— Специалист: [имя], психолог/психотерапевт, [подход — КПТ, гештальт, схема-терапия и т.д.]
+— Аудитория: взрослые, ищущие помощь с тревогой, выгоранием, отношениями, самооценкой
+— Цель: вызвать доверие и подтолкнуть записаться на первую консультацию
+— Тон: тёплый, спокойный, профессиональный, без давления и «продажности»
+
+Технический стек:
+— Чистый HTML + CSS + минимум ванильного JavaScript, без фреймворков и сборщиков
+— Один файл index.html (стили и скрипты можно вынести в style.css и script.js)
+— Mobile-first, лёгкие анимации на CSS
+— Семантический HTML, доступность (a11y), Lighthouse 90+
+
+Структура:
+— Hero — фото специалиста, имя, специализация, мягкий оффер и CTA «Записаться»
+— «С чем я работаю» — список запросов (тревога, отношения, выгорание, кризисы)
+— Обо мне — образование, подход, опыт, человеческая подача без сухих регалий
+— Как проходит консультация — формат (онлайн/очно), длительность, что ожидать
+— Стоимость и форматы — прозрачные цены, первая встреча
+— Отзывы — анонимные, бережно поданные (или убрать, если их нет)
+— FAQ — «это нормально, что я волнуюсь?», «конфиденциальность», «как понять, что мне подходит терапия»
+— Контакты и запись — мессенджеры, форма или ссылка на запись, футер
+
+Дизайн:
+— Спокойная палитра: приглушённые тёплые тона (беж, шалфей, мягкий терракот), много воздуха
+— Округлая мягкая типографика, крупный читаемый текст
+— Минимум визуального шума, ощущение безопасности и тишины
+— Деликатные микровзаимодействия, ничего резкого и кричащего
+
+Важно по этике и тону:
+— Никаких обещаний «вылечим за 5 сессий» и гарантий результата
+— Текст поддерживающий, уважающий состояние человека, без манипуляций и страха
+— Упомяни конфиденциальность и что обращение за помощью — это нормально
+— Реалистичный осмысленный контент под нишу, без lorem ipsum
+
+Тон текста — ориентир:
+✓ «Если вы впервые задумались о терапии — это уже смелый шаг. Не обязательно знать, с чего начать.»
+✗ «Запишитесь прямо сейчас и измените свою жизнь!»
+
+Чего избегать: стоковых улыбающихся лиц, кнопок «Купить», таймеров обратного отсчёта, всплывающих окон, обещаний результата.
+
+Процесс:
+— Прежде чем писать код, кратко опиши: какие эмоции должен испытывать посетитель на каждом экране и как дизайн это поддерживает. Предложи план — дождись моего подтверждения.
+— Собери пошагово: разметка → стили → контент → лёгкие анимации
+— Открой index.html и проверь, что всё отображается без ошибок в консоли
+— В конце дай чек-лист готового и что можно улучшить
+
+Готово, когда: сайт открывается без ошибок в консоли, читается на телефоне шириной 360px, и человек в тревожном состоянии не чувствует давления.
+
+Спрашивай о недостающих деталях (фото, цены, контакты), а не выдумывай их.</pre>
+    </div>
+
+    <h2><mark>Шаг 4. Получи первый результат</mark></h2>
+
+    <p>Отправь своё описание в Claude Code. Он создаст структуру страницы, оформление и сохранит всё в папку проекта. Чтобы увидеть результат — найди файл <strong>index.html</strong> в папке и открой его двойным щелчком в браузере.</p>
+
+    <p>Не жди идеала с первой попытки. Давай правки итерациями:</p>
+
+    <ul>
+      <li>«Увеличь размер заголовков»</li>
+      <li>«Сделай фон темнее»</li>
+      <li>«Добавь форму обратной связи в конце страницы»</li>
+      <li>«Блок с услугами переделай — сейчас он слишком перегружен»</li>
+    </ul>
+
+    <p>Обычно 3–5 итераций достаточно для хорошего результата.</p>
+
+    <h2><mark>Шаг 5. Сохрани проект в GitHub</mark></h2>
+
+    <p>GitHub — это облачное хранилище для кода. Там будут лежать резервные копии, и оттуда же можно опубликовать сайт.</p>
+
+    <ul>
+      <li>Создай аккаунт на github.com</li>
+      <li>Нажми Create Repository, дай название</li>
+      <li>Перенеси файлы сайта в репозиторий</li>
+    </ul>
+
+    <p>Или делегируй это Claude: <em>«Подготовь проект к публикации, создай Git-репозиторий и настрой отправку файлов в GitHub»</em> — он сам пройдёт по шагам.</p>
+
+    <h2><mark>Шаг 6. Опубликуй сайт</mark></h2>
+
+    <p>Самый быстрый способ — <strong>GitHub Pages</strong>, это бесплатно:</p>
+
+    <ul>
+      <li>Открой репозиторий → вкладка <strong>Settings</strong> → раздел <strong>Pages</strong> в левом меню</li>
+      <li>В блоке <em>Branch</em> выбери ветку <strong>main</strong> и нажми <strong>Save</strong></li>
+      <li>Подожди 1–3 минуты — в том же разделе появится ссылка вида <em>username.github.io/название-репозитория</em></li>
+    </ul>
+
+    <p>Если нужен собственный домен — в том же разделе Pages есть поле <em>Custom domain</em>: введи домен, сохрани и пропиши запись у своего регистратора. Все обновления после этого будут публиковаться автоматически при каждом изменении в репозитории.</p>
+
+    <h2><mark>Перед публикацией: проверь безопасность</mark></h2>
+
+    <p>Код, который пишет ИИ, работает быстро — но он не всегда безопасен по умолчанию. Это не значит, что Claude плохо работает. Просто у него нет контекста: он не знает, что ты планируешь хранить на сайте, кто будет его посещать и насколько важна защита данных. Это нужно проверить самостоятельно.</p>
+
+    <p>Хорошая новость: Claude Code умеет сам себя проверять. Введи в чат одну команду — и получишь отчёт об уязвимостях:</p>
+
+    <div class="highlight">
+      <p><strong>/security-review</strong> — встроенная команда Claude Code. Она сканирует весь проект и находит типичные проблемы: незащищённые данные, небезопасные запросы, открытые ключи.</p>
+    </div>
+
+    <p>Три вещи, которые важно проверить до того, как сайт увидят другие:</p>
+
+    <ul>
+      <li><strong>Ключи и пароли не в коде.</strong> Если на сайте используются сторонние сервисы — API, платёжные системы, базы данных — их ключи должны храниться в переменных окружения (.env файл), а не прямо в коде. Попроси Claude: <em>«Проверь, нет ли секретных ключей в коде, и перенеси их в .env»</em></li>
+      <li><strong>Формы защищены от спама.</strong> Если на сайте есть форма обратной связи или записи, без защиты её быстро забьют автоматические боты. Попроси Claude добавить базовую защиту.</li>
+      <li><strong>Нет лишнего в открытом доступе.</strong> Убедись, что закрытые страницы или данные не видны всем подряд — это особенно важно, если сайт будет расти.</li>
+    </ul>
+
+    <p>Если нашлось что-то серьёзное — не паникуй. Просто покажи Claude отчёт и попроси исправить: <em>«Вот результат security-review. Исправь все найденные уязвимости по очереди, начиная с критичных».</em> Он пройдёт по каждому пункту сам.</p>
+
+    <h2>Главное правило</h2>
+
+    <p>Не изучай всё подряд. Выбери один небольшой проект и доведи его до конца. Сайт-визитка, лендинг для услуги, личная страница — что угодно, но законченное.</p>
+
+    <div class="highlight">
+      <p>Поставь себе цель: за ближайшие 7 дней опубликовать первый сайт по собственной ссылке. Не идеальный. Не большой. Просто — живой.</p>
+    </div>
+
+    <p>После этого ты будешь смотреть на ИИ иначе — не как на интересную игрушку, а как на рабочий инструмент.</p>
+
+  </div>
+
+  <div class="article-cta">
+    <p>Хочешь шаблон первого запроса?</p>
+    <h3>В канале — готовое техзадание под разные типы сайтов и промпты для старта</h3>
+    <a href="https://t.me/arnt_ai" target="_blank" class="btn-primary">Перейти в канал →</a>
+  </div>
+
+  <footer class="footer">
+    <span>Ткачева Арина, 2025</span>
+    <a href="https://t.me/arnt_ai" target="_blank">Telegram →</a>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    function copyPrompt() {
+      const text = document.getElementById('psycho-prompt').textContent;
+      const btn = document.getElementById('copyBtn');
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Скопировано ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Скопировать промпт';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

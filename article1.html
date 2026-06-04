@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Какой ИИ выбрать? — Ткачева Арина</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .ai-img {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      border: 1px solid rgba(237,233,227,0.07);
+      margin: 20px 0 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Ткачева Арина || нейросети</a>
+    <a href="https://t.me/arnt_ai" target="_blank" class="btn-tg">Telegram →</a>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <div class="article-hero">
+    <a href="index.html" class="back-link">← Все статьи</a>
+    <div class="article-meta">
+      <span class="article-tag">Основы</span>
+      <span class="article-date">Статья 01</span>
+    </div>
+    <h1 class="article-title">Какой ИИ выбрать и в чём разница?</h1>
+    <p class="article-subtitle">ChatGPT, Claude, Gemini — все говорят об ИИ, но никто не объясняет, какой нужен именно тебе и для каких задач.</p>
+  </div>
+
+  <div class="article-divider"></div>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-body">
+
+    <p>В 2024 году появилось столько нейросетей, что голова идёт кругом. Все они делают «примерно одно и то же», но на деле — совершенно разные инструменты для разных задач. Разберёмся раз и навсегда.</p>
+
+    <h2>Большая тройка</h2>
+
+    <p>На сегодня рынок делят три ключевых игрока. Каждый со своим характером, сильными сторонами и идеальным сценарием использования.</p>
+
+    <h3>ChatGPT (OpenAI)</h3>
+    <img src="gpt.png" alt="Интерфейс ChatGPT" class="ai-img" />
+    <p>Самый известный, самый распространённый. Отлично подходит для <strong>написания текстов, переводов, генерации идей</strong>. Огромная экосистема плагинов. Если ты только начинаешь — это комфортная точка входа.</p>
+    <p><strong>Слабая сторона:</strong> иногда «галлюцинирует» — уверенно говорит неправду. Требует проверки фактов.</p>
+
+    <h3>Claude (Anthropic)</h3>
+    <img src="claude.png" alt="Интерфейс Claude" class="ai-img" />
+    <p>Лучший для <strong>аналитики, работы с большими документами и сложных задач</strong>. Читает целые книги, PDF, таблицы. Более осторожный и точный — реже придумывает несуществующие факты.</p>
+    <p>Именно его мы будем использовать в большинстве гайдов этого сайта.</p>
+
+    <div class="highlight">
+      <p>Claude умеет держать в контексте до ~200 000 токенов — это примерно 150 000 слов. Загрузи целый бизнес-план и попроси его проанализировать.</p>
+    </div>
+
+    <p><strong>Моя рекомендация — сразу берите платную подписку.</strong> Бесплатная версия сильно ограничена по количеству запросов и доступу к лучшим моделям. Чтобы реально почувствовать возможности Claude — нужен Pro.</p>
+
+    <p>Оплатить можно через <strong>Plati.market</strong> — российский маркетплейс цифровых товаров. Находите раздел с подписками Claude, выбираете продавца с хорошим рейтингом и отзывами, указываете формат «отправить ссылку на оплату». Стоит <strong>2 000–3 000 ₽ в месяц</strong>, в зависимости от курса. Это разумная цена за инструмент, который экономит часы работы каждый день.</p>
+
+    <h3>Как не сжечь лимиты раньше времени</h3>
+
+    <p>Даже на платном тарифе у Claude есть лимит запросов на определённый период. Несколько привычек, которые помогут расходовать его разумно:</p>
+
+    <ul>
+      <li><strong>Не отправляй картинки без необходимости.</strong> Изображения «весят» значительно больше текста — один скриншот может съесть столько же лимита, сколько несколько полноценных запросов.</li>
+      <li><strong>Упаковывай всё в один запрос.</strong> Вместо трёх коротких сообщений подряд — одно подробное. Claude отлично работает с длинными инструкциями, а ты экономишь обращения.</li>
+      <li><strong>Не регенерируй ответ без причины.</strong> Если результат в целом подходит — отредактируй его через следующий запрос, а не кнопкой «Regenerate».</li>
+      <li><strong>Продолжай в том же чате.</strong> Новый диалог — это новый контекст с нуля. Там, где можно продолжить старый разговор, так и делай: Claude помнит всё, что было выше.</li>
+      <li><strong>Не дублируй данные в каждом сообщении.</strong> Если ты уже загрузил документ или описал задачу — ссылайся на него, не вставляй снова.</li>
+    </ul>
+
+    <h3>Gemini (Google)</h3>
+    <img src="gemini.png" alt="Интерфейс Gemini" class="ai-img" />
+    <p>Самый сильный в работе с <strong>реальными данными из интернета</strong>. Интегрирован с Google Workspace — Docs, Sheets, Gmail. Если твой бизнес завязан на Google-экосистеме, Gemini будет полезен.</p>
+
+    <h2>Как выбрать свой инструмент</h2>
+
+    <ul>
+      <li><strong>Пишешь контент, придумываешь идеи</strong> → ChatGPT или Claude</li>
+      <li><strong>Анализируешь документы, проводишь исследования</strong> → Claude</li>
+      <li><strong>Работаешь с Google-сервисами</strong> → Gemini</li>
+      <li><strong>Нужны изображения</strong> → Banana или Higgsfield — можно подключить напрямую через Claude Code</li>
+      <li><strong>Автоматизация и код</strong> → Claude или ChatGPT с Code Interpreter</li>
+    </ul>
+
+    <h2>Главный совет</h2>
+
+    <p>Не выбирай один инструмент навсегда. Используй разные под разные задачи — это нормально. Профессионалы работают с несколькими нейросетями одновременно.</p>
+
+    <p>Но для старта: зарегистрируйся в <strong>Claude</strong>. Именно с него мы начнём в следующей статье.</p>
+
+  </div>
+
+  <!-- ARTICLE CTA -->
+  <div class="article-cta">
+    <div class="article-cta-box">
+      <p>Следующий шаг</p>
+      <h3>Читай все материалы и получи доступ к промптам и шаблонам в Telegram</h3>
+      <br />
+      <a href="https://t.me/arnt_ai" target="_blank" class="btn-primary">Перейти в канал →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>Ткачева Арина, 2025</span>
+    <a href="https://t.me/arnt_ai" target="_blank">Telegram</a>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+  </script>
+
+</body>
+</html>

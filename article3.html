@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Анализ конкурентов за 15 минут — Ткачева Арина</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    mark {
+      background: linear-gradient(104deg,
+        rgba(237,233,227,0) 0%,
+        rgba(237,233,227,0.11) 4%,
+        rgba(237,233,227,0.08) 94%,
+        rgba(237,233,227,0) 100%);
+      color: inherit;
+      padding: 2px 4px;
+      border-radius: 1px;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .prompt-block {
+      background: rgba(237,233,227,0.03);
+      border: 1px solid rgba(237,233,227,0.1);
+      border-radius: 2px;
+      padding: 0;
+      margin: 40px 0;
+      overflow: hidden;
+    }
+    .prompt-block-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(237,233,227,0.08);
+    }
+    .prompt-block-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(237,233,227,0.3);
+      margin: 0;
+    }
+    .prompt-block pre {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 2;
+      color: rgba(237,233,227,0.65);
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0;
+      padding: 24px 20px;
+    }
+    .prompt-copy {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(237,233,227,0.55);
+      background: rgba(237,233,227,0.06);
+      border: 1px solid rgba(237,233,227,0.12);
+      border-radius: 2px;
+      padding: 7px 13px;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+      white-space: nowrap;
+    }
+    .prompt-copy:hover {
+      background: rgba(237,233,227,0.1);
+      border-color: rgba(237,233,227,0.25);
+      color: var(--text);
+    }
+    .prompt-copy.copied {
+      background: rgba(212,175,90,0.1);
+      border-color: rgba(212,175,90,0.3);
+      color: rgba(212,175,90,0.85);
+    }
+    .footnote {
+      font-size: 12px;
+      color: rgba(237,233,227,0.3);
+      border-top: 1px solid rgba(237,233,227,0.08);
+      margin-top: 64px;
+      padding-top: 20px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Ткачева Арина || нейросети</a>
+    <a href="https://t.me/arnt_ai" target="_blank" class="btn-tg">Telegram</a>
+  </nav>
+
+  <div class="article-hero">
+    <a href="index.html" class="back-link">← Все статьи</a>
+    <div class="article-meta">
+      <span class="article-tag">Практика</span>
+      <div class="article-meta-sep"></div>
+      <span class="article-num">Статья 03</span>
+    </div>
+    <h1 class="article-title">Как провести анализ конкурентов через Claude за 15 минут?</h1>
+    <p class="article-subtitle">Раньше на это уходили недели и бюджеты. Сегодня достаточно одного промпта и 15 минут времени.</p>
+  </div>
+
+  <div class="article-divider"></div>
+
+  <div class="article-body">
+
+    <p>Ещё несколько лет назад анализ конкурентов — это были маркетинговые агентства, аналитики, таблицы на десятки строк и счёт от 30 000 рублей и выше. Малый бизнес либо делал это кое-как, либо не делал вовсе. Сегодня ту же работу можно выполнить самостоятельно за один вечер, используя Claude и правильно составленный запрос.</p>
+
+    <p>В этой статье — конкретный порядок действий. Никакой теории, только то, что реально работает.</p>
+
+    <h2>Важная оговорка перед стартом</h2>
+
+    <p>Для полноценного анализа понадобится связка: <strong>Claude + Instagram*</strong>. Именно в соцсетях конкуренты показывают своё позиционирование, аудиторию и контентную стратегию честнее, чем на сайте. Если ты работаешь в нише, где конкуренты активны в Instagram*, — эта связка даст максимум.</p>
+
+    <p>Claude не заходит в соцсети сам — тебе нужно вручную собрать данные и передать ему. Ниже объясню, что именно и как.</p>
+
+    <div class="highlight">
+      <p>* Instagram принадлежит Meta и <strong>запрещён на территории России</strong>.</p>
+    </div>
+
+    <h2><mark>Шаг 1. Составь список конкурентов</mark></h2>
+
+    <p>Для начала нужно понять, кого именно анализировать. Возьми 3–5 конкурентов: тех, кого ты знаешь, и тех, кого выдаёт поиск по твоим ключевым запросам.</p>
+
+    <p>Попроси Claude помочь с поиском:</p>
+
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Промпт — поиск конкурентов</span>
+        <button class="prompt-copy" onclick="copyPrompt(this)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre>Я занимаюсь [опиши свою деятельность: например, онлайн-обучение английскому для взрослых].
+Моя аудитория — [опиши: занятые люди 25–40 лет, хотят разговорный английский].
+Помоги составить список критериев, по которым мне стоит выбрать конкурентов для анализа.
+Также предложи, где их искать: поисковики, соцсети, маркетплейсы.</pre>
+    </div>
+
+    <h2><mark>Шаг 2. Собери данные</mark></h2>
+
+    <p>Claude не может зайти на сайт конкурента или открыть его Instagram* (запрещён в России) сам — ему нужна твоя помощь. Твоя задача: скопировать и передать ему нужную информацию.</p>
+
+    <p>Что нужно собрать по каждому конкуренту:</p>
+
+    <ul>
+      <li><strong>С сайта:</strong> заголовок главной страницы, блок «О нас» или «О компании», перечень услуг/продуктов, цены (если открыты), отзывы</li>
+      <li><strong>Из Instagram* (запрещён в России):</strong> описание профиля (bio), последние 9–12 постов — о чём пишут, как подают, какие темы повторяются, количество подписчиков</li>
+      <li><strong>Общее впечатление:</strong> на кого похоже, какой тон, что обещают клиенту</li>
+    </ul>
+
+    <p>Не нужно собирать всё идеально. Достаточно ключевых фрагментов — Claude разберётся даже с неструктурированным текстом.</p>
+
+    <h2><mark>Шаг 3. Передай данные Claude и получи анализ</mark></h2>
+
+    <p>Когда данные собраны — вставляй всё в один запрос. Чем больше контекста ты даёшь, тем точнее будет результат.</p>
+
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Промпт — основной анализ</span>
+        <button class="prompt-copy" onclick="copyPrompt(this)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre>Я провожу анализ конкурентов в нише [твоя ниша].
+Моё предложение: [коротко опиши, что ты делаешь и для кого].
+
+Ниже — данные по конкурентам, которые я собрал вручную.
+
+КОНКУРЕНТ 1 — [название]
+Сайт: [вставь текст с главной страницы]
+Instagram* (запрещён в России): [вставь bio и краткое описание контента]
+Цены: [если известны]
+
+КОНКУРЕНТ 2 — [название]
+[аналогично]
+
+КОНКУРЕНТ 3 — [название]
+[аналогично]
+
+Проанализируй каждого по следующим критериям:
+1. Позиционирование — на кого они нацелены, какой главный оффер
+2. Тон и стиль коммуникации — как говорят с аудиторией
+3. Контентная стратегия — что публикуют, какие темы закрывают
+4. Сильные стороны — что делают хорошо
+5. Слабые стороны — где есть пробелы или слабые места
+6. Ценовой сегмент — если данные доступны
+
+В конце дай общий вывод: какие незакрытые потребности аудитории ты видишь, и где я могу занять более выгодную позицию на фоне этих конкурентов.</pre>
+    </div>
+
+    <h2><mark>Шаг 4. Углубись в нужное</mark></h2>
+
+    <p>После основного анализа у тебя будет общая картина. Теперь можно задавать уточняющие вопросы — Claude помнит весь контекст разговора и не нужно повторять данные заново.</p>
+
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Промпты — уточняющие вопросы</span>
+        <button class="prompt-copy" onclick="copyPrompt(this)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre>— Сформулируй моё уникальное торговое предложение на основе пробелов, которые ты нашёл.
+
+— Предложи 5 тем для контента, которые никто из конкурентов не закрывает.
+
+— Напиши описание профиля для Instagram* (запрещён в России), которое отличает меня от этих трёх конкурентов.
+
+— Составь таблицу сравнения по всем найденным критериям — в формате Markdown.</pre>
+    </div>
+
+    <h2><mark>Шаг 5. Найди идеи для контента</mark></h2>
+
+    <p>Если ты ведёшь соцсети — следующий промпт превращает анализ конкурентов в готовый контент-план. Он особенно эффективен в связке с данными из Instagram* (запрещён в России): чем больше реальных примеров ты передашь, тем точнее будут идеи на выходе.</p>
+
+    <p>Промпт проходит пять этапов: исследует конкурентов, разбирает их контент, находит незакрытые ниши, предлагает 10 готовых публикаций и пишет хуки для коротких видео.</p>
+
+    <div class="prompt-block">
+      <div class="prompt-block-header">
+        <span class="prompt-block-label">Промпт — контент-возможности и идеи</span>
+        <button class="prompt-copy" onclick="copyPrompt(this)">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="4" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
+            <path d="M1 8V1h7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Скопировать
+        </button>
+      </div>
+      <pre>Выступай в роли маркетолога и контент-аналитика, который умеет находить сильные стороны конкурентов и превращать эти наблюдения в рабочие идеи для продвижения.
+
+Исходные данные:
+— Ниша: [указать]
+— Локация: [указать]
+— Текущая ситуация: [кратко описать]
+
+Этап 1. Исследование конкурентов
+Используй поиск и найди наиболее заметные аккаунты в моей нише.
+Для каждого конкурента определи:
+— ключевые темы контента;
+— основные форматы публикаций;
+— сильные стороны позиционирования;
+— способы взаимодействия с аудиторией;
+— механики привлечения клиентов.
+Если каких-либо данных недостаточно — прямо укажи это и не делай необоснованных предположений.
+
+Этап 2. Глубокий разбор контента
+По каждому найденному аккаунту проанализируй:
+— какие публикации получают наибольший отклик;
+— какие рубрики используются регулярно;
+— каким образом формируется доверие к бренду;
+— какие боли и сомнения аудитории закрываются;
+— каким образом встроены продажи и призывы к действию;
+— какой стиль коммуникации используется.
+Сделай выводы по каждому пункту.
+
+Этап 3. Поиск возможностей для роста
+Что работает практически у всех — найди повторяющиеся закономерности: темы, форматы, визуальные решения, способы вовлечения аудитории.
+Что почти никто не использует — найди слабые места рынка: недораскрытые темы, отсутствующие форматы, незакрытые вопросы аудитории, возможности для позиционирования.
+Сформулируй конкретные идеи, которые помогут выделиться на фоне конкурентов.
+
+Этап 4. Генерация контента
+На основе анализа предложи 10 публикаций.
+Для каждой идеи укажи:
+— формат (Reels, пост, карусель, сторис и т.д.);
+— сильный заголовок или хук;
+— краткое описание содержания;
+— основной смысл;
+— призыв к действию.
+Идеи должны быть практичными и готовыми к реализации без дополнительной доработки.
+
+Этап 5. Хуки для охватов
+Создай 5 сильных первых фраз для коротких видео.
+Требования: цепляют внимание с первых секунд, вызывают любопытство, соответствуют моей нише, не используют кликбейт и ложные обещания.
+
+Правила работы:
+— Сначала покажи список конкурентов, затем переходи к аналитике, после — к выводам и идеям.
+— Пиши кратко и по существу, без общих фраз и шаблонных рекомендаций.
+— Все выводы должны быть применимы на практике уже сегодня.
+— Если данных недостаточно — честно отмечай ограничения анализа.
+
+Финальный результат должен дать понимание трёх вещей:
+1. Что уже работает в моей нише.
+2. Где находятся точки роста и свободные возможности.
+3. Какой контент стоит публиковать прямо сейчас для привлечения клиентов.</pre>
+    </div>
+
+    <h2>Что делать с результатом</h2>
+
+    <p>Анализ конкурентов — не самоцель. Он нужен, чтобы принять конкретные решения. После того как Claude выдаст картину рынка, ответь себе на три вопроса:</p>
+
+    <ul>
+      <li><strong>Чем ты отличаешься?</strong> Если ответа нет — это сигнал скорректировать позиционирование</li>
+      <li><strong>Что у конкурентов делают лучше тебя?</strong> Это не повод расстраиваться — это список задач</li>
+      <li><strong>Какую потребность никто не закрывает?</strong> Это твоя точка входа</li>
+    </ul>
+
+    <p>Повторяй анализ раз в 2–3 месяца. Рынок меняется, конкуренты меняют стратегии — то, что было правдой полгода назад, сегодня может быть неактуально.</p>
+
+    <div class="highlight">
+      <p>Весь этот анализ занимает от 15 до 40 минут — в зависимости от того, сколько конкурентов и насколько подробно ты собрал данные. Агентство делало бы то же самое несколько недель.</p>
+    </div>
+
+    <p class="footnote">* Instagram принадлежит компании Meta. Деятельность Meta признана нежелательной и запрещена на территории Российской Федерации.</p>
+
+  </div>
+
+  <div class="article-cta">
+    <p>Хочешь готовые промпты под свою нишу?</p>
+    <h3>В канале — шаблоны для анализа конкурентов в разных сферах и другие инструменты</h3>
+    <a href="https://t.me/arnt_ai" target="_blank" class="btn-primary">Перейти в канал →</a>
+  </div>
+
+  <footer class="footer">
+    <span>Ткачева Арина, 2025</span>
+    <a href="https://t.me/arnt_ai" target="_blank">Telegram →</a>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    function copyPrompt(btn) {
+      const pre = btn.closest('.prompt-block').querySelector('pre');
+      navigator.clipboard.writeText(pre.textContent.trim()).then(() => {
+        btn.querySelector('svg').style.display = 'none';
+        const originalText = btn.textContent.trim();
+        btn.childNodes[btn.childNodes.length - 1].textContent = ' Скопировано ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.querySelector('svg').style.display = '';
+          btn.childNodes[btn.childNodes.length - 1].textContent = ' Скопировать';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>

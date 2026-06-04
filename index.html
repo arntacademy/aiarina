@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ткачева Арина — Автоматизация бизнеса через ИИ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Ткачева Арина || нейросети</a>
+    <a href="https://t.me/arnt_ai" target="_blank" class="btn-tg">Telegram</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <span class="hero-tag">Автоматизация бизнеса через ИИ</span>
+      <h1 class="hero-title">Сокращай время.<br /><em>Масштабируй результат.</em></h1>
+      <p class="hero-sub">Практические гайды о том, как тратить меньше времени на рутинные задачи и зарабатывать больше с помощью ИИ.</p>
+    </div>
+    <div class="hero-right">
+      <img src="founder.jpg" alt="Ткачева Арина" />
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="articles">
+    <p class="section-label">Все материалы — 05</p>
+
+    <div class="articles-list">
+
+      <a href="article1.html" class="article-item">
+        <span class="item-num">01</span>
+        <div class="item-content">
+          <span class="item-tag">Основы</span>
+          <h3 class="item-title">Какой ИИ выбрать и в чём разница?</h3>
+        </div>
+        <span class="item-arrow">→</span>
+      </a>
+
+      <a href="article2.html" class="article-item">
+        <span class="item-num">02</span>
+        <div class="item-content">
+          <span class="item-tag">Инструменты</span>
+          <h3 class="item-title">Как начать работу с Claude и настроить его под себя?</h3>
+        </div>
+        <span class="item-arrow">→</span>
+      </a>
+
+      <a href="article3.html" class="article-item">
+        <span class="item-num">03</span>
+        <div class="item-content">
+          <span class="item-tag">Практика</span>
+          <h3 class="item-title">Как провести анализ конкурентов через Claude за 15 минут?</h3>
+        </div>
+        <span class="item-arrow">→</span>
+      </a>
+
+      <a href="article4.html" class="article-item">
+        <span class="item-num">04</span>
+        <div class="item-content">
+          <span class="item-tag">Без кода</span>
+          <h3 class="item-title">Как сделать собственный сайт без строчки кода за 2 часа?</h3>
+        </div>
+        <span class="item-arrow">→</span>
+      </a>
+
+      <a href="article5.html" class="article-item">
+        <span class="item-num">05</span>
+        <div class="item-content">
+          <span class="item-tag">Контент</span>
+          <h3 class="item-title">Как создавать контент через связку Claude + Higgsfield?</h3>
+        </div>
+        <span class="item-arrow">→</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-left">
+      Все промпты<br />и инструменты —<br /><em>в Telegram</em>
+    </div>
+    <div class="cta-right">
+      <p class="cta-desc">Подписывайся на канал — там всё, что не вошло в гайды: кейсы, шаблоны, новые инструменты.</p>
+      <a href="https://t.me/arnt_ai" target="_blank" class="btn-primary">Перейти в канал →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>Ткачева Арина, 2025</span>
+    <a href="https://t.me/arnt_ai" target="_blank">Telegram →</a>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Как настроить Claude под себя — Ткачева Арина</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Ткачева Арина || нейросети</a>
+    <a href="https://t.me/arnt_ai" target="_blank" class="btn-tg">Telegram</a>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <div class="article-hero">
+    <a href="index.html" class="back-link">← Все статьи</a>
+    <div class="article-meta">
+      <span class="article-tag">Настройка</span>
+      <div class="article-meta-sep"></div>
+      <span class="article-num">Статья 03</span>
+    </div>
+    <h1 class="article-title">Как настроить Claude под себя?</h1>
+    <p class="article-subtitle">Большинство людей используют Claude как обычный чат. Но если потратить 20 минут на настройку — он начнёт работать в разы точнее и быстрее.</p>
+  </div>
+
+  <div class="article-divider"></div>
+
+  <div class="article-body">
+
+    <p>Claude — не просто чатбот. Это инструмент, который можно настроить так, чтобы он знал о тебе, твоём бизнесе и задачах всё необходимое. Тогда каждый новый разговор начнётся не с нуля.</p>
+
+    <h2>Системный промпт — твоя база</h2>
+
+    <p>Главный инструмент настройки — <strong>системный промпт</strong> в Projects. Это текст, который Claude читает перед каждым разговором внутри проекта. Он задаёт контекст, стиль и правила.</p>
+
+    <div class="highlight">
+      <p>Представь, что ты нанимаешь ассистента. Системный промпт — это твой инструктаж в первый рабочий день.</p>
+    </div>
+
+    <h2>Что писать в системный промпт</h2>
+
+    <h3>1. Кто ты и чем занимаешься</h3>
+    <p>Расскажи Claude о своём бизнесе — коротко и конкретно. Сфера, продукт, аудитория, ключевые задачи.</p>
+
+    <div class="highlight">
+      <p>«Я — предприниматель, веду онлайн-школу по маркетингу для малого бизнеса. Моя аудитория — владельцы малого бизнеса 25–45 лет в России. Основные задачи: создание контента, анализ конкурентов, написание текстов для соцсетей.»</p>
+    </div>
+
+    <h3>2. Как ты хочешь получать ответы</h3>
+    <p>Формат, стиль, длина ответов. Это критично — Claude по умолчанию даёт слишком длинные ответы.</p>
+
+    <div class="highlight">
+      <p>«Отвечай кратко и по делу. Без вступлений и заключений. Используй списки там, где это уместно. Не объясняй очевидного. Если нужно уточнение — задай один вопрос, а не три.»</p>
+    </div>
+
+    <h3>3. Твои запреты и правила</h3>
+    <p>Что Claude не должен делать никогда. Например, не предлагать банальные советы, не использовать корпоративный язык, не добавлять дисклеймеры.</p>
+
+    <div class="highlight">
+      <p>«Не используй клише вроде "в современном мире" или "это важно". Не пиши вступления в стиле "Конечно! Я рад помочь". Не добавляй оговорки про то, что нужно проверить у специалиста — я понимаю это без напоминаний.»</p>
+    </div>
+
+    <h2>Как создать Project в Claude</h2>
+
+    <ul>
+      <li>Открой Claude.ai и нажми <strong>«New Project»</strong> в левом меню</li>
+      <li>Дай проекту название — например, «Мой бизнес» или «Контент»</li>
+      <li>Нажми <strong>«Project instructions»</strong> и вставь свой системный промпт</li>
+      <li>Все разговоры внутри проекта будут использовать эти инструкции автоматически</li>
+    </ul>
+
+    <h2>Память через Knowledge</h2>
+
+    <p>В Projects можно загружать документы — и Claude будет к ним обращаться. Загрузи туда:</p>
+
+    <ul>
+      <li><strong>Описание своего продукта</strong> — Claude будет знать детали без повторений</li>
+      <li><strong>Примеры твоих текстов</strong> — научится писать в твоём стиле</li>
+      <li><strong>Список конкурентов</strong> — для аналитических задач</li>
+      <li><strong>FAQ или скрипты</strong> — для работы с клиентскими запросами</li>
+    </ul>
+
+    <h2>Шаблон системного промпта</h2>
+
+    <p>Скопируй и адаптируй под себя:</p>
+
+    <div class="highlight">
+      <p>«Контекст: [кто ты, чем занимаешься, для кого]. Задачи: [что я буду просить тебя делать]. Стиль ответов: кратко, по делу, без воды. Формат: используй списки и структуру. Запреты: [что не делать]. Язык: русский.»</p>
+    </div>
+
+    <h2>Результат</h2>
+
+    <p>После настройки Claude перестаёт быть универсальным чатботом и становится твоим персональным инструментом. Каждый ответ — точнее. Каждая задача — быстрее. Время на объяснения контекста — стремится к нулю.</p>
+
+    <p>Это разница между инструментом и ассистентом.</p>
+
+  </div>
+
+  <!-- ARTICLE CTA -->
+  <div class="article-cta">
+    <p>Следующий шаг</p>
+    <h3>В канале — готовый системный промпт, который я использую сама</h3>
+    <a href="https://t.me/arnt_ai" target="_blank" class="btn-primary">Перейти в канал →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>Ткачева Арина, 2025</span>
+    <a href="https://t.me/arnt_ai" target="_blank">Telegram →</a>
+  </footer>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+  </script>
+
+</body>
+</html>
